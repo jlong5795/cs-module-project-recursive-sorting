@@ -79,9 +79,11 @@ def merge_sort_in_place(arr, l, r):
     if l < r:
         mid = l + (r - l) // 2
 
+        # use recursion to split left and right until each element is isolated
         merge_sort_in_place(arr, l, mid)
         merge_sort_in_place(arr, mid + 1, r)
 
+        # call our merge helper to put the pieces back together in order.
         merge_in_place(arr, l, mid, r)
 
     return arr
